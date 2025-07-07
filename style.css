@@ -1,7 +1,7 @@
 /* === Fonts === */
 @font-face {
   font-family: 'Redaction 100';
-  src: url('fonts/Redaction-100.otf') format('opentype');
+  src: url('fonts/Redaction100.otf') format('opentype');
   font-weight: 100;
   font-style: normal;
   font-display: swap;
@@ -17,7 +17,7 @@
 
 @font-face {
   font-family: 'Pixel Operator Mono 8';
-  src: url('fonts/pixel-operator-mono-8.ttf') format('truetype');
+  src: url('fonts/PixelOperatorMono8.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -25,7 +25,7 @@
 
 @font-face {
   font-family: 'Pixel Operator Mono HB 8';
-  src: url('fonts/pixel-operator-mono-hb-8.ttf') format('truetype');
+  src: url('fonts/PixelOperatorMonoHB8.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -225,4 +225,40 @@ nav.nav-bar {
 /* === Second slide === */
 .second-slide {
   background-color: white;
+}
+
+
+/* === Responsive: Mobile first === */
+@media (max-width: 768px) {
+  .h1-name {
+    font-size: 6vw;
+  }
+
+  .about-me {
+    font-size: 4vw;
+    padding: 2vw;
+  }
+
+  .cart {
+    padding: 3vw;
+  }
+
+  .count-cart {
+    font-size: 4vw;
+  }
+
+  .cart-img {
+    width: 6vw;
+    height: 6vw;
+    padding-right: 4vw;
+  }
+
+  .slide1-text1 {
+    font-size: 4vw;
+    padding: 5vw;
+  }
+
+  .break-text {
+    font-size: clamp(24px, 10vw, 64px);
+  }
 }
