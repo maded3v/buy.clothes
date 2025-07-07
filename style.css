@@ -69,26 +69,24 @@ nav.nav-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
-  height: 60px;
+  padding:  0 1vw;
+  height: 5vw;
   border-bottom: 2px solid black;
-  width: 100%;
+  width: 100vw;
   box-sizing: border-box;
   z-index: 10;
 }
 
 .logo-about {
   border: 2px solid black;
-  width: 40px;
-  height: 40px;
+  width: 3.5vw;
+  height: 3.5vw;
 }
 
 .about-me {
   display: flex;
   align-items: center;
-  gap: 5px;
-  font-size: 15px;
-  padding: 5px;
+  font-size: 1.2vw;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
   color: black;
@@ -103,7 +101,7 @@ nav.nav-bar {
 .about-link {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 0.65vw;
   text-decoration: none;
   color: inherit;
 }
@@ -114,15 +112,15 @@ nav.nav-bar {
   left: 50%;
   transform: translateX(-50%);
   font-family: 'Pixel Operator Mono HB 8';
-  font-size: 20px;
+  font-size: 1.55vw;
 }
 
 .cart {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 0.6vw;
   position: relative;
-  padding: 14px;
+  padding: 1.2vw;
   cursor: pointer;
   transition: background-color 0.2s, color 0.2s;
   color: black;
@@ -130,13 +128,13 @@ nav.nav-bar {
 }
 
 .count-cart {
-  font-size: 15px;
+  font-size: 1.2vw;
 }
 
 .cart-img {
-  width: 25px;
-  height: 25px;
-  padding-right: 20px;
+  width: 2.5vw;
+  height: 2.5vw;
+  padding-right: 2vw;
   transition: filter 0.2s;
 }
 
@@ -163,7 +161,7 @@ nav.nav-bar {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-size: 17px;
+   font-size: 2.2vw;
 }
 
 /* === Typing animation === */
