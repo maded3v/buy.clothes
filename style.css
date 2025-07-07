@@ -67,34 +67,37 @@ section {
 }
 
 nav.nav-bar {
-  background-color: #fff;
+  background-color: white;
   position: fixed; 
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 10px;
-  height: 60px;
-  border-bottom: 2px solid black;
+  height: 80px;
+  border-bottom: 4px solid black;
   width: 100%;
   box-sizing: border-box;
-  z-index: 10;
+  z-index: 100;
+  top: 0;
+  left: 0;
 }
 
 .logo-about {
   border: 2px solid black;
-  width: 40px;
-  height: 40px;
+  width: 55px;
+  height: 55px;
 }
 
 .about-me {
   display: flex;
   align-items: center;
-  font-size: 15px;
+  font-size: 20px;
   background-color: transparent;
   padding: 5px;
   cursor: pointer; 
   transition: background-color 0.2s, color 0.2s;
   color: black;
+  letter-spacing: -2px;
 }
 
 .about-me:hover {
@@ -118,7 +121,8 @@ nav.nav-bar {
   left: 50%;
   transform: translateX(-50%);
   font-family: 'pixel operator mono hb 8';
-  font-size: 22px;
+  font-size: 25px;
+  letter-spacing: -3px;
 }
 
 .cart {
@@ -127,20 +131,20 @@ nav.nav-bar {
   gap: 6px;
   position: relative;
   background-color: transparent;
-  padding: 14px;
+  padding: 10px;
   cursor: pointer; 
   transition: background-color 0.2s, color 0.2s;
   color: black;
 }
 
 .count-cart {
-  font-size: 15px;
+  font-size: 23px;
 }
 
 .cart-img {
-  width: 25px;
-  height: 25px;
-  padding-right: 10px;
+  width: 45px;
+  height: 45px;
+  padding-right: 5px;
   transition: filter 0.2s;
 }
 
@@ -240,7 +244,103 @@ nav.nav-bar {
 
 .second-slide {
   background-color: white;
+  padding-top: 80px;
 }
+
+.selection-nav {
+  display: flex;
+  margin-top: 1.2%;
+  justify-content: center;
+  
+}
+#all {
+  margin-left: 20px;
+}
+.choose {
+  font-size: 18px;
+  color: #00000030;
+  margin-right: 20px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.choose.active {
+  color: black;
+}
+
+
+
+.look-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  position: relative;
+  color: black;
+}
+
+.item img {
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.item-name,
+.add-button {
+  text-align: center;
+  width: 100%;
+}
+
+
+.size-select-box > div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.close-size {
+  cursor: pointer;
+  color: black;
+  margin-left: 10px;
+}
+
+.size-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.size-btn {
+  padding: 4px 10px;
+  color: blavk;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.2s;
+}
+
+.size-btn:hover {
+  transform: scale(1.2);
+}
+
+
+
+
+
 
   @media (max-width: 1080px) {
   html, body {
@@ -249,7 +349,7 @@ nav.nav-bar {
     width: 100%;
     height: 100%;
     font-family: 'pixel operator mono 8';
-    /* Удалено: overflow: hidden; */
+    
   }
 
   .scroll-container {
@@ -293,14 +393,14 @@ nav.nav-bar {
   }
 
   .about-me {
-    font-size: 20px;
+    font-size: 23px;
     padding: 5px;
     letter-spacing: -4px;
   }
 
   .h1-name {
     letter-spacing: -3px;
-    font-size: 25px;
+    font-size: 27px;
   }
 
   .cart {
@@ -308,16 +408,23 @@ nav.nav-bar {
   }
 
   .count-cart {
-    font-size: 20px;
+    font-size: 23px;
   }
 
   .cart-img {
-    height: 60px;
-    width: 60px;
+    height: 45px;
+    width: 45px;
     padding-right: 5px;
   }
 
   .slide1-text1 {
+    font-size: 25px;
+  }
+  .second-slide {
+  margin-top: 102px;
+  padding: 1.2%;
+  }
+  .choose {
     font-size: 25px;
   }
 }
