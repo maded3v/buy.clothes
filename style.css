@@ -1,0 +1,228 @@
+/* === Fonts === */
+@font-face {
+  font-family: 'Redaction 100';
+  src: url('fonts/Redaction-100.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Redaction';
+  src: url('fonts/Redaction.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pixel Operator Mono 8';
+  src: url('fonts/pixel-operator-mono-8.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Pixel Operator Mono HB 8';
+  src: url('fonts/pixel-operator-mono-hb-8.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* === Base styles === */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Pixel Operator Mono 8';
+  background-color: white;
+  color: #fff;
+}
+
+.scroll-container {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: currentColor transparent;
+}
+
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  width: 100%;
+  height: 100vh;
+}
+
+/* === Navigation bar === */
+nav.nav-bar {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  height: 60px;
+  border-bottom: 2px solid black;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.logo-about {
+  border: 2px solid black;
+  width: 40px;
+  height: 40px;
+}
+
+.about-me {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+  padding: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  color: black;
+  background-color: transparent;
+}
+
+.about-me:hover {
+  background-color: black;
+  color: white;
+}
+
+.about-link {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.h1-name {
+   color: black;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Pixel Operator Mono HB 8';
+  font-size: 20px;
+}
+
+.cart {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  padding: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  color: black;
+  background-color: transparent;
+}
+
+.count-cart {
+  font-size: 15px;
+}
+
+.cart-img {
+  width: 25px;
+  height: 25px;
+  padding-right: 20px;
+  transition: filter 0.2s;
+}
+
+.cart:hover {
+  background-color: black;
+  color: white;
+}
+
+.cart:hover .cart-img {
+  filter: invert(1);
+}
+
+/* === First slide === */
+.first-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to bottom, #ffffff, #000000);
+  color: white;
+}
+
+.slide1-text1 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  font-size: 17px;
+}
+
+/* === Typing animation === */
+@keyframes typingCycle {
+  0% { width: 0; }
+  30% { width: 100%; }
+  60% { width: 100%; }
+  100% { width: 0; }
+}
+
+.animate-text1, .animate-text2 {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: .15em solid white;
+  animation: typingCycle 7s steps(30, end) infinite, blink-caret .75s step-end infinite;
+}
+
+.animate-text1 {
+  animation: typingCycle 7s steps(20, end) infinite, blink-caret .75s step-end infinite;
+}
+
+.animate-text2 {
+  animation: typingCycle 7s steps(30, end) infinite, blink-caret .75s step-end infinite;
+}
+
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+/* === Break point === */
+.break-point {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+  height: 100vh;
+  text-align: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.break-text {
+  font-size: clamp(32px, 10vw, 100px);
+  font-family: 'Redaction 100';
+  color: #0e0e0e;
+  transition: color 0.4s ease, font-family 0.4s ease;
+  cursor: default;
+  line-height: 1.1;
+}
+
+.break-text:hover {
+  color: white;
+  font-family: 'Redaction';
+}
+
+/* === Second slide === */
+.second-slide {
+  background-color: white;
+}
