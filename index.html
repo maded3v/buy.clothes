@@ -7,60 +7,97 @@
 </head>
 <body> 
 
-<nav class="nav-bar">
-  <div class="about-me">
-    <a href="about_me.html" class="about-link">
-      <img class="logo-about" src="madedev1.png" alt="logo" />
-      <div>about me</div>
-    </a>
-  </div>
-  <div class="h1-name" id="title1">made.dev / buy.clothes</div>
-  <div class="cart">
-    <div class="count-cart">0</div>
-    <img class="cart-img" src="cart.png" alt="cart" />
-  </div>
-</nav>
-  
-<div class="scroll-container">
-
-  <section class="first-slide">
-    <div class="slide1-text1">
-      <p class="animate-text1">We UnR3al</p>
-      <p class="animate-text2">uuu cAN’7 Buy aNyTH1ng</p>
+  <nav class="nav-bar">
+    <div class="about-me">
+      <a href="about_me.html" class="about-link">
+        <img class="logo-about" src="madedev1.png" alt="logo" />
+        <div>about me</div>
+      </a>
     </div>
-  </section>
 
-  <section class="break-point">
-     <span class="break-text">WHY ARE YOU STILL HERE?</span>
-  </section>
+    <div class="h1-name" id="title1">made.dev / buy.clothes</div>
 
-  <section class="second-slide">
-    <div class="selection-nav">
-      <div class="choose" id="all">all</div>
-      <div class="choose" id="top">top</div>
-      <div class="choose" id="bottom">bottom</div>
-      <div class="choose" id="accessories">accessories</div>
+    <div class="cart" id="cart-btn">
+      <img class="cart-img" src="cart.png" alt="cart">
+      <div class="count-cart">0</div>
     </div>
-    <div class="look-items">
+  </nav>
 
-<div class="item all top footbalka">
-  <img src="items/footbalka1.png" />
-  <div class="item-name">footbalka</div>
-  <div class="add-button">+</div>
-</div>
+  <div class="cart-panel" id="cart-panel">
+    <div class="cart-header">
+      <div class="name-cart">Cart[<span id="cart-count">0</span>]</div>
+      <button class="close-cart" id="close-cart">&times;</button>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-footer">
+      <div class="cart-total">Итого: $<span id="cart-total">0</span></div>
+      <button class="checkout-btn">Оплатить</button>
+    </div>
+  </div>
 
+  <div class="scroll-container">
 
+    <section class="first-slide">
+      <div class="slide1-text1">
+        <p class="animate-text1">We UnR3al</p>
+        <p class="animate-text2">uuu cAN’7 Buy aNyTH1ng</p>
+      </div>
+    </section>
 
+    <section class="break-point">
+      <span class="break-text">WHY ARE YOU STILL HERE?</span>
+    </section>
 
+    <section class="second-slide">
+      <div class="selection-nav">
+        <div class="choose" id="all">all</div>
+        <div class="choose" id="top">top</div>
+        <div class="choose" id="bottom">bottom</div>
+        <div class="choose" id="accessories">accessories</div>
+      </div>
 
+      <div class="look-items">
 
-</div>
-</div>
+        <div class="item all top footbalka">
+          <img src="items/footbalka1.png" alt="footbalka" />
+          <div class="item-name">footbalka</div>
+          <div class="add-button">+</div>
+        </div>
 
+        <div class="item all top sviter">
+          <img src="items/sviter1.png" alt="sviter" />
+          <div class="item-name">sviter</div>
+          <div class="add-button">+</div>
+        </div>
 
-</section>
-</div>
+        <div class="item all bottom shorti">
+          <img src="items/shorti1.png" alt="shorti" />
+          <div class="item-name">shorti</div>
+          <div class="add-button">+</div>
+        </div>
 
-<script src="script.js"></script>
+        <div class="item all bottom trusi">
+          <img src="items/trusi1.png" alt="trusi" />
+          <div class="item-name">trusi</div>
+          <div class="add-button">+</div>
+        </div>
+
+        <div class="item all accessories earring">
+          <img src="items/earring1.png" alt="earring" />
+          <div class="item-name">earring</div>
+          <div class="add-button">+</div>
+        </div>
+
+        <div class="item all accessories ring">
+          <img src="items/ring1.png" alt="ring" />
+          <div class="item-name">ring</div>
+          <div class="add-button">+</div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
