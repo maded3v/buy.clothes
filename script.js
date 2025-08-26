@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const totalCount = cart.reduce((sum, item) => sum + item.quantity, 0);
   cartCountIcon.textContent = totalCount;
   cartCountSpan.textContent = totalCount;
-  cartTotalSpan.textContent = `${total}`;
+  cartTotalSpan.textContent = `$${total}`;
 
   saveCart();
 }
@@ -94,22 +94,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  document.querySelectorAll(".item").forEach(item => {
-    const addBtn = item.querySelector(".add-button");
-    const nameEl = item.querySelector(".item-name");
-    if (!addBtn || !nameEl) return;
-    const originalName = nameEl.textContent;
-    const price = parseInt(item.dataset.price || 20);
-    const imgSrc = item.querySelector("img").src;
+ document.querySelectorAll(".item").forEach(item => {
+  const addBtn = item.querySelector(".add-button");
+  const nameEl = item.querySelector(".item-name");
+  const imgEl = item.querySelector("img");
+  if (!addBtn || !nameEl || !imgEl) return;
 
-    addBtn.addEventListener("click", () => {
-      if (item.classList.contains("trusi") || item.classList.contains("accessories")) {
-        addToCart(originalName, price, imgSrc);
-      } else {
-        showSizeSelector(item, originalName, price, imgSrc);
-      }
-    });
-  });
+  const originalName = nameEl.textContent;
+  const price = parseInt(item.dataset.price || 20);
+  const imgSrc = imgEl.src;
+
+  // функция обработчик
+  const handleClick = () => {
+    if (item.classList.contains("trusi") || item.classList.contains("accessories")) {
+      addToCart(originalName, price, imgSrc);
+    } else {
+      showSizeSelector(item, originalName, price, imgSrc);
+    }
+  };
+
+  // клик по "+"
+  addBtn.addEventListener("click", handleClick);
+
+  // клик по названию
+  nameEl.addEventListener("click", handleClick);
+
+  // клик по картинке
+  imgEl.addEventListener("click", handleClick);
+});
+
 
   const categoryButtons = document.querySelectorAll(".choose");
   const items = document.querySelectorAll(".item");
@@ -130,6 +143,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   function showSizeSelector(item, originalName, price, imgSrc) {
+  // если уже открыт выбор размера, выходим
+  if (item.querySelector(".size-select-box")) return;
+
   const addButton = item.querySelector(".add-button");
   const nameEl = item.querySelector(".item-name");
   if (!addButton || !nameEl) return;
@@ -183,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
     addButton.style.display = "block";
   });
 }
+
 
   function saveCart() {
     localStorage.setItem("cart", JSON.stringify(cart));
