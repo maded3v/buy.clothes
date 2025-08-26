@@ -308,8 +308,8 @@ nav.nav-bar {
 }
 
 .cart-item-img img {
-  max-width: 60px;
-  max-height: 60px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
@@ -382,30 +382,33 @@ nav.nav-bar {
   padding-top: 10px;
 }
 
-
 .cart-total {
   display: inline-block;
-  color:white;
+  color:black;
   font-size: 25px;
-  padding: 10px ;
-  background-color: rgb(0, 225, 0);
- align-self: flex-end; 
+  padding: 10px;
+  align-self: center;
 }
 
-.checkout-btn {
 
+.checkout-btn {
+ display: inline-block;  
+ align-self: center;
   font-family: 'Pixel Operator Mono 8';
   background-color: rgba(15, 15, 15, 1);
   color: white;
   border: none;
-  padding: 20px ; /* маленький отступ по бокам для воздуха */
+  padding: 20px ; 
   font-size: 25px;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+   transition: transform 0.2s ease, filter 0.2s ease;
+   margin-bottom: 20px;
 }
 
 .checkout-btn:hover {
   filter: invert(1);
+  transform: scale(1.1);
+  
 }
 
 
@@ -608,13 +611,34 @@ nav.nav-bar {
   .choose { font-size: 25px; }
   .toast {font-size: 20px;}
   .selection-nav { margin-top: 20px; flex-wrap: wrap; justify-content: center; gap: 10px; }
-  .cart-item-name{font-size: 20px;}
-  .cart-item-right{font-size: 20px;}
-  .cart-panel{background-color: white; padding: 19px;}
-  
+  .cart-item-name{font-size: 25px;}
+  .cart-item-right{font-size: 25px;}
+  .cart-panel{ right: -700px; width: 700px; background-color: white; padding: 19px;}
+  .cart-item-img{ width: 100px; height: 100px;}
+  .cart-item-img img {width: 90px; height: 90px;}
+  .close-cart {font-size: 30px;}
+  .cart-item-price{font-size: 25px;}
+ .cart-item-controls button{font-size: 25px;}
+ .cart-item-quantity{font-size: 25px;}
+ .remove-item{width: 35px; height: 35px;}
  
 
 
 
-
+}
+.about-text{
+  margin-top: calc(var(--nav-height) + 20px);
+  font-family:'Pixel Operator Mono 8' ;
+  color: white;
+  margin-left: 50px;
+}
+.about-h1{
+  
+  font-family:'Pixel Operator Mono HB 8' ;
+  font-size: 40px;
+  font-weight: bold;
+}
+.about-text-h2{
+  margin-top: 60px;
+  font-size: 20px;
 }
