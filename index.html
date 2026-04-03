@@ -36,6 +36,37 @@
     </div>
   </div>
 
+  <div class="payment-modal" id="payment-modal" aria-hidden="true">
+    <div class="payment-dialog" role="dialog" aria-modal="true" aria-labelledby="payment-title">
+      <div class="payment-header">
+        <div class="payment-title" id="payment-title">demo checkout</div>
+        <button class="payment-close" id="payment-close" type="button" aria-label="Close payment window">X</button>
+      </div>
+
+      <form class="payment-form" id="payment-form">
+        <label for="pay-name">name</label>
+        <input id="pay-name" name="name" type="text" autocomplete="cc-name" required />
+
+        <label for="pay-card">card number</label>
+        <input id="pay-card" name="card" type="text" inputmode="numeric" maxlength="19" placeholder="0000 0000 0000 0000" required />
+
+        <div class="payment-row">
+          <div>
+            <label for="pay-exp">exp</label>
+            <input id="pay-exp" name="exp" type="text" inputmode="numeric" maxlength="5" placeholder="MM/YY" required />
+          </div>
+          <div>
+            <label for="pay-cvv">cvv</label>
+            <input id="pay-cvv" name="cvv" type="password" inputmode="numeric" maxlength="3" placeholder="000" required />
+          </div>
+        </div>
+
+        <p class="payment-note">demo only: no real payment is processed.</p>
+        <button class="payment-submit" id="payment-submit" type="submit">pay now</button>
+      </form>
+    </div>
+  </div>
+
   <div class="scroll-container">
 
     <section class="first-slide">

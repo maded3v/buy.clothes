@@ -7,6 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartCountIcon = document.querySelector(".count-cart");
   const cartTotalSpan = document.getElementById("cart-total");
   const titleEl = document.getElementById("title1");
+  const checkoutBtn = document.querySelector(".checkout-btn");
+  const paymentModal = document.getElementById("payment-modal");
+  const paymentCloseBtn = document.getElementById("payment-close");
+  const paymentForm = document.getElementById("payment-form");
+  const cardInput = document.getElementById("pay-card");
+  const expInput = document.getElementById("pay-exp");
+  const cvvInput = document.getElementById("pay-cvv");
 
   let cart = [];
   loadCart();
@@ -19,6 +26,70 @@ document.addEventListener("DOMContentLoaded", () => {
         !cartBtn.contains(e.target)) {
       cartPanel.classList.remove("open");
     }
+  });
+
+  function openPayment() {
+    paymentModal.classList.add("open");
+    paymentModal.setAttribute("aria-hidden", "false");
+  }
+
+  function closePayment() {
+    paymentModal.classList.remove("open");
+    paymentModal.setAttribute("aria-hidden", "true");
+  }
+
+  checkoutBtn.addEventListener("click", () => {
+    if (!cart.length) {
+      showToast("cart is empty");
+      return;
+    }
+    openPayment();
+  });
+
+  paymentCloseBtn.addEventListener("click", closePayment);
+
+  paymentModal.addEventListener("click", e => {
+    if (e.target === paymentModal) closePayment();
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && paymentModal.classList.contains("open")) {
+      closePayment();
+    }
+  });
+
+  cardInput.addEventListener("input", () => {
+    const digits = cardInput.value.replace(/\D/g, "").slice(0, 16);
+    cardInput.value = digits.replace(/(.{4})/g, "$1 ").trim();
+  });
+
+  expInput.addEventListener("input", () => {
+    const digits = expInput.value.replace(/\D/g, "").slice(0, 4);
+    expInput.value = digits.length > 2 ? `${digits.slice(0, 2)}/${digits.slice(2)}` : digits;
+  });
+
+  cvvInput.addEventListener("input", () => {
+    cvvInput.value = cvvInput.value.replace(/\D/g, "").slice(0, 3);
+  });
+
+  paymentForm.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const cardDigits = cardInput.value.replace(/\D/g, "");
+    const expDigits = expInput.value.replace(/\D/g, "");
+    const cvvDigits = cvvInput.value.replace(/\D/g, "");
+
+    if (cardDigits.length !== 16 || expDigits.length !== 4 || cvvDigits.length !== 3) {
+      showToast("check payment fields");
+      return;
+    }
+
+    showToast("demo payment success");
+    cart = [];
+    updateCartUI();
+    paymentForm.reset();
+    closePayment();
+    cartPanel.classList.remove("open");
   });
 
   function addToCart(displayName, price, imgSrc, toastName = displayName) {
