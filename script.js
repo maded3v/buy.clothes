@@ -11,11 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const paymentModal = document.getElementById("payment-modal");
   const paymentCloseBtn = document.getElementById("payment-close");
   const paymentForm = document.getElementById("payment-form");
+  const paymentSubmitBtn = document.getElementById("payment-submit");
   const cardInput = document.getElementById("pay-card");
   const expInput = document.getElementById("pay-exp");
   const cvvInput = document.getElementById("pay-cvv");
 
   let cart = [];
+  let paymentProcessing = false;
+  let processingTimer = null;
+  let processingTextTimer = null;
   loadCart();
 
   cartBtn.addEventListener("click", () => cartPanel.classList.add("open"));
@@ -34,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function closePayment() {
+    if (paymentProcessing) return;
     paymentModal.classList.remove("open");
     paymentModal.setAttribute("aria-hidden", "true");
   }
@@ -74,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   paymentForm.addEventListener("submit", e => {
     e.preventDefault();
+    if (paymentProcessing) return;
 
     const cardDigits = cardInput.value.replace(/\D/g, "");
     const expDigits = expInput.value.replace(/\D/g, "");
@@ -84,12 +90,33 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    showToast("demo payment success");
-    cart = [];
-    updateCartUI();
-    paymentForm.reset();
-    closePayment();
-    cartPanel.classList.remove("open");
+    paymentProcessing = true;
+    paymentSubmitBtn.disabled = true;
+
+    const frames = ["processing", "processing.", "processing..", "processing..."];
+    let frame = 0;
+    paymentSubmitBtn.textContent = frames[frame];
+    processingTextTimer = setInterval(() => {
+      frame = (frame + 1) % frames.length;
+      paymentSubmitBtn.textContent = frames[frame];
+    }, 240);
+
+    const delay = 800 + Math.floor(Math.random() * 401);
+    processingTimer = setTimeout(() => {
+      clearInterval(processingTextTimer);
+      processingTextTimer = null;
+      processingTimer = null;
+      paymentProcessing = false;
+      paymentSubmitBtn.disabled = false;
+      paymentSubmitBtn.textContent = "pay now";
+
+      showToast("demo payment success");
+      cart = [];
+      updateCartUI();
+      paymentForm.reset();
+      closePayment();
+      cartPanel.classList.remove("open");
+    }, delay);
   });
 
   function addToCart(displayName, price, imgSrc, toastName = displayName) {

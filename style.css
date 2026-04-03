@@ -187,6 +187,7 @@ nav.nav-bar {
   color: black;
   border: none;
   background: transparent;
+  font-family: inherit;
 }
 
 .cart:hover {
@@ -208,6 +209,7 @@ nav.nav-bar {
 .count-cart {
   font-size: 23px;
   text-align: center;
+  font-family: inherit;
 }
 
 .cart-panel {
@@ -291,6 +293,7 @@ nav.nav-bar {
   display: flex;
   align-items: center;
   gap: 10px;
+  min-width: 0;
 }
 
 .cart-item-right {
@@ -318,7 +321,8 @@ nav.nav-bar {
 .cart-item-name {
   font-size: 18px;
   color: black;
-  white-space: nowrap;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .cart-item-price {
@@ -505,6 +509,11 @@ nav.nav-bar {
   transition: transform 0.2s ease, filter 0.2s ease;
 }
 
+.payment-submit:disabled {
+  cursor: progress;
+  opacity: 0.85;
+}
+
 .payment-submit:hover,
 .payment-close:hover {
   filter: invert(1);
@@ -531,6 +540,7 @@ nav.nav-bar {
 
 .choose {
   border: none;
+  font-family: inherit;
   font-size: 18px;
   color: #000;
   margin-right: 20px;
@@ -734,6 +744,19 @@ nav.nav-bar {
 
 
 }
+
+@media (max-width: 520px) {
+  .cart-panel { padding: 12px; }
+  .cart-item { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .cart-item-left { width: 100%; }
+  .cart-item-right { width: 100%; justify-content: space-between; }
+  .cart-item-name { font-size: 16px; }
+  .cart-item-price { font-size: 18px; }
+  .cart-item-controls button { font-size: 18px; width: 22px; height: 22px; }
+  .cart-item-quantity { font-size: 18px; }
+  .remove-item { width: 22px; height: 22px; }
+}
+
 .about-text{
   margin-top: calc(var(--nav-height) + 20px);
   font-family:'Pixel Operator Mono 8' ;
