@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="eu">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>buy.clothes</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -17,21 +18,21 @@
 
     <div class="h1-name" id="title1">made.dev / buy.clothes</div>
 
-    <div class="cart" id="cart-btn">
+    <button class="cart" id="cart-btn" type="button" aria-label="Open cart">
       <img class="cart-img" src="cart.png" alt="cart">
       <div class="count-cart">0</div>
-    </div>
+    </button>
   </nav>
 
   <div class="cart-panel" id="cart-panel">
     <div class="cart-header">
       <div class="name-cart">Cart[<span id="cart-count">0</span>]</div>
-      <button class="close-cart" id="close-cart">X</button>
+      <button class="close-cart" id="close-cart" type="button">X</button>
     </div>
     <ul class="cart-items" id="cart-items"></ul>
     <div class="cart-footer">
       <div class="cart-total">deneg:<span id="cart-total">0</span></div>
-      <button class="checkout-btn">plati:/</button>
+      <button class="checkout-btn" type="button">plati:/</button>
     </div>
   </div>
 
@@ -50,10 +51,10 @@
 
     <section class="second-slide">
       <div class="selection-nav">
-        <div class="choose" id="all">all</div>
-        <div class="choose" id="top">top</div>
-        <div class="choose" id="bottom">bottom</div>
-        <div class="choose" id="accessories">accessories</div>
+        <button class="choose" id="all" type="button">all</button>
+        <button class="choose" id="top" type="button">top</button>
+        <button class="choose" id="bottom" type="button">bottom</button>
+        <button class="choose" id="accessories" type="button">accessories</button>
       </div>
 
       <div class="look-items">
@@ -61,37 +62,37 @@
         <div class="item all top footbalka">
           <img src="items/footbalka1.png" alt="footbalka" />
           <div class="item-name">footbalka</div>
-          <div class="add-button">+</div>
+          <button class="add-button" type="button" aria-label="Add footbalka to cart">+</button>
         </div>
 
         <div class="item all top sviter">
           <img src="items/sviter1.png" alt="sviter" />
           <div class="item-name">sviter</div>
-          <div class="add-button">+</div>
+          <button class="add-button" type="button" aria-label="Add sviter to cart">+</button>
         </div>
 
         <div class="item all bottom shorti">
           <img src="items/shorti1.png" alt="shorti" />
           <div class="item-name">shorti</div>
-          <div class="add-button">+</div>
+          <button class="add-button" type="button" aria-label="Add shorti to cart">+</button>
         </div>
 
         <div class="item all bottom trusi">
           <img src="items/trusi1.png" alt="trusi" />
           <div class="item-name">trusi</div>
-          <div class="add-button">+</div>
+          <button class="add-button" type="button" aria-label="Add trusi to cart">+</button>
         </div>
 
         <div class="item all accessories earring">
           <img src="items/earring1.png" alt="earring" />
           <div class="item-name">earring</div>
-          <div class="add-button">+</div>
+          <button class="add-button" type="button" aria-label="Add earring to cart">+</button>
         </div>
 
         <div class="item all accessories ring">
           <img src="items/ring1.png" alt="ring" />
           <div class="item-name">ring</div>
-          <div class="add-button">+</div>
+          <button class="add-button" type="button" aria-label="Add ring to cart">+</button>
         </div>
 
       </div>

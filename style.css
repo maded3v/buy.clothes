@@ -185,6 +185,8 @@ nav.nav-bar {
   cursor: pointer;
   transition: 0.2s;
   color: black;
+  border: none;
+  background: transparent;
 }
 
 .cart:hover {
@@ -211,8 +213,8 @@ nav.nav-bar {
 .cart-panel {
   position: fixed;
   top: 0;
-  right: -550px;
-  width: 550px;
+   right: -100%;
+   width: min(100vw, 420px);
   height: 100%;
   background-color: white;
   border-left: 4px solid black;
@@ -430,6 +432,7 @@ nav.nav-bar {
 }
 
 .choose {
+  border: none;
   font-size: 18px;
   color: #000;
   margin-right: 20px;
@@ -494,6 +497,8 @@ nav.nav-bar {
 }
 
 .add-button {
+  border: none;
+  font-family: inherit;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -613,7 +618,7 @@ nav.nav-bar {
   .selection-nav { margin-top: 20px; flex-wrap: wrap; justify-content: center; gap: 10px; }
   .cart-item-name{font-size: 25px;}
   .cart-item-right{font-size: 25px;}
-  .cart-panel{ right: -700px; width: 700px; background-color: white; padding: 19px;}
+  .cart-panel{ right: -100%; width: min(100vw, 420px); background-color: white; padding: 19px;}
   .cart-item-img{ width: 100px; height: 100px;}
   .cart-item-img img {width: 90px; height: 90px;}
   .close-cart {font-size: 30px;}
