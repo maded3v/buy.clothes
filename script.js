@@ -128,15 +128,6 @@ document.addEventListener("DOMContentLoaded", () => {
   showToast(`[${toastName}] added to cart!`);
 }
 
-  function getCartItemNameMarkup(name) {
-    const match = name.match(/^(.*)\[([A-Za-z0-9]+)\]$/);
-    if (!match) return `<div class="cart-item-name">${name}</div>`;
-
-    const baseName = match[1].trim();
-    const size = match[2];
-    return `<div class="cart-item-name">${baseName} <span class="cart-item-size">[${size}]</span></div>`;
-  }
-
   function updateCartUI() {
   cartItemsContainer.innerHTML = '';
   let total = 0;
@@ -149,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     li.innerHTML = `
       <div class="cart-item-left">
         <div class="cart-item-img"><img src="${item.imgSrc}" alt="${item.name}"></div>
-        ${getCartItemNameMarkup(item.name)}
+        <div class="cart-item-name">${item.name}</div>
       </div>
       <div class="cart-item-right">
         <div class="cart-item-price">$${item.price}</div>
@@ -280,13 +271,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const sizeRow = document.createElement("div");
   sizeRow.classList.add("size-buttons");
 
-    ["S","M","L"].forEach(size => {
+  ["S","M","L"].forEach(size => {
     const btn = document.createElement("div");
     btn.classList.add("size-btn");
     btn.textContent = size;
 
     btn.addEventListener("click", () => {
-      const displayName = `${originalName} [${size}]`;
+      const displayName = `${originalName}[${size}]`;
       const toastName = originalName;
       addToCart(displayName, price, imgSrc, toastName);
       sizeBox.remove();
