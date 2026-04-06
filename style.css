@@ -334,10 +334,17 @@ nav.nav-bar {
   overflow-wrap: anywhere;
 }
 
+.cart-item-size {
+  display: inline-block;
+  font-size: 0.85em;
+  padding: 1px 4px;
+  border: 1px solid black;
+}
+
 .cart-item-price {
   font-size: 20px;
   color: #555;
-  min-width: 50px;
+  min-width: 44px;
   text-align: right;
   font-family:'Pixel Operator Mono 8';
   font-weight: bold;
@@ -346,7 +353,7 @@ nav.nav-bar {
 .cart-item-controls {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
 }
 
 .cart-item-controls button {
